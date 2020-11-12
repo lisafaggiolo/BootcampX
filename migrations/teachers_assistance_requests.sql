@@ -1,3 +1,7 @@
+DROP TABLE teachers CASCADE;
+DROP TABLE assistance_request CASCADE;
+
+
 CREATE TABLE teachers (
   id SERIAL PRIMARY KEY NOT NULL,
   name VARCHAR(255) NOT NULL,
@@ -6,7 +10,7 @@ CREATE TABLE teachers (
   end_date DATE
 );
 
-CREATE TABLE assistance_request (
+CREATE TABLE assistance_requests (
   id SERIAL PRIMARY kEY NOT NULL,
   teacher_id INTEGER REFERENCES teachers(id) ON DELETE CASCADE,
   student_id INTEGER REFERENCES students(id) ON DELETE CASCADE,
